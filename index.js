@@ -2,11 +2,20 @@ class Traveler {
     constructor (name){
         this.name = name
         this.isHealthy = true
-        this.food = 1
+        this._food = 1
+    }
+
+    get food(){
+        return this._food
+    }
+
+    set food(num){
+        this._food = num
     }
 
     hunt = () =>{
         this.food += 2
+        return '+2 de food'
     }
 
     eat = () =>{
@@ -59,3 +68,4 @@ class Wagon {
         
     }
 }
+
