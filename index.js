@@ -70,24 +70,18 @@ class Wagon {
 }
 
 
-let wagon = new Wagon(2);
+let wagon = new Wagon(5);
 // Criar três viajantes
 let henrietta = new Traveler('Henrietta');
 let juan = new Traveler('Juan');
 let maude = new Traveler('Maude');
+let tadeu = new Traveler('tadeu');
+
+wagon.join(tadeu)
+wagon.join(maude)
+tadeu.eat()
+tadeu.eat()
+
+//console.log(wagon.passageiros)
  
-console.log(`${wagon.getAvailableSeatCount()} should be 2`);
- 
-wagon.join(henrietta);
-console.log(`${wagon.getAvailableSeatCount()} should be 1`);
- 
-wagon.join(juan);
-wagon.join(maude); // Não tem espaço para ela!
-console.log(`${wagon.getAvailableSeatCount()} should be 0`);
- 
-henrietta.hunt(); // pega mais comida
-juan.eat();
-juan.eat(); // juan agora está com fome (doente)
- 
-console.log(`${wagon.shouldQuarantine()} should be true since juan is sick`);
-console.log(`${wagon.totalFood()} should be 3`);
+//console.log(`${wagon.shouldQuarantine()} should be 3`);
